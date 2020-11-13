@@ -4,7 +4,7 @@ import axios from "axios";
 
 import useRequest from "../../hooks/use-request";
 
-export default () => {
+const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { doRequest, errors } = useRequest({
@@ -25,7 +25,7 @@ export default () => {
   return (
     <form onSubmit={onSubmit}>
       <h1>Sign Up</h1>
-      <div classname="form-group">
+      <div className="form-group">
         <label>Email Address</label>
         <input
           value={email}
@@ -33,7 +33,7 @@ export default () => {
           className="form-control"
         />
       </div>
-      <div classname="form-group">
+      <div className="form-group">
         <label className="mt-3">Password</label>
         <input
           value={password}
@@ -47,3 +47,5 @@ export default () => {
     </form>
   );
 };
+
+export default SignUp;
