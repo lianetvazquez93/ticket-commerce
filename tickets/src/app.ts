@@ -7,6 +7,7 @@ import { errorHandler, NotFoundError, currentUser } from "@lv93tickets/common";
 
 import { createTicketRouter } from "./routes/new";
 import { showTicketRouter } from "./routes/show";
+import { fetchTicketsRouter } from "./routes";
 
 const app = express();
 app.set("trust proxy", true);
@@ -21,6 +22,7 @@ app.use(currentUser);
 
 app.use(createTicketRouter);
 app.use(showTicketRouter);
+app.use(fetchTicketsRouter);
 
 app.all("*", async (req, res) => {
   throw new NotFoundError();
